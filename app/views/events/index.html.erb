@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <h1 class="display-4">Bienvenue à notre liste d'événements</h1>
+  <p class="lead">Découvrez les événements à venir dans votre ville.</p>
+  <hr class="my-4">
+  <p>Créez votre propre événement ou explorez ce qui se passe près de chez vous.</p>
+  <a class="btn btn-primary btn-lg" href="<%= new_event_path %>" role="button">Créer un événement</a>
+</div>
+
+<h1>Liste des Événements</h1>
+
+<div class="container">
+  <% @events.each do |event| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h2><%= link_to event.title, event_path(event) %></h2>
+        <p><strong>Date :</strong> <%= event.date %></p>
+        <p><strong>Lieu :</strong> <%= event.location %></p>
+        <!-- Ajoutez d'autres détails de l'événement ici si nécessaire 😐 -->
+      </div>
+    </div>
+  <% end %>
+</div>
